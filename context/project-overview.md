@@ -24,12 +24,12 @@ This creates **context switching**, **lost knowledge**, and **inconsistent workf
 
 ## 👥 Target Users
 
-| Persona | What They Stash |
-|---|---|
-| **Everyday Developer** | Snippets, prompts, commands, links |
-| **AI-First Developer** | Prompts, contexts, workflows, system messages |
-| **Content Creator / Educator** | Code blocks, explanations, course notes |
-| **Full-Stack Builder** | Patterns, boilerplates, API examples |
+| Persona                        | What They Stash                               |
+| ------------------------------ | --------------------------------------------- |
+| **Everyday Developer**         | Snippets, prompts, commands, links            |
+| **AI-First Developer**         | Prompts, contexts, workflows, system messages |
+| **Content Creator / Educator** | Code blocks, explanations, course notes       |
+| **Full-Stack Builder**         | Patterns, boilerplates, API examples          |
 
 ---
 
@@ -41,15 +41,15 @@ Items are the core unit of DevStash. Each item has a **type** that determines ho
 
 **System types** (cannot be edited or deleted):
 
-| Type | Icon | Color | Content Kind | Plan |
-|---|---|---|---|---|
-| Snippet | `Code` | `#3b82f6` 🔵 Blue | text | Free |
-| Prompt | `Sparkles` | `#8b5cf6` 🟣 Purple | text | Free |
-| Command | `Terminal` | `#f97316` 🟠 Orange | text | Free |
-| Note | `StickyNote` | `#fde047` 🟡 Yellow | text | Free |
-| Link | `Link` | `#10b981` 🟢 Emerald | url | Free |
-| File | `File` | `#6b7280` ⚫ Gray | file | **Pro** |
-| Image | `Image` | `#ec4899` 🌸 Pink | file | **Pro** |
+| Type    | Icon         | Color                | Content Kind | Plan    |
+| ------- | ------------ | -------------------- | ------------ | ------- |
+| Snippet | `Code`       | `#3b82f6` 🔵 Blue    | text         | Free    |
+| Prompt  | `Sparkles`   | `#8b5cf6` 🟣 Purple  | text         | Free    |
+| Command | `Terminal`   | `#f97316` 🟠 Orange  | text         | Free    |
+| Note    | `StickyNote` | `#fde047` 🟡 Yellow  | text         | Free    |
+| Link    | `Link`       | `#10b981` 🟢 Emerald | url          | Free    |
+| File    | `File`       | `#6b7280` ⚫ Gray    | file         | **Pro** |
+| Image   | `Image`      | `#ec4899` 🌸 Pink    | file         | **Pro** |
 
 **Custom types** — coming later as a Pro feature.
 
@@ -66,10 +66,11 @@ Collections group related items. Key rules:
 - Each collection can have a `defaultTypeId` so new items added to an empty collection start with the right type
 
 **Examples:**
-- *"React Patterns"* — mostly snippets + notes
-- *"Context Files"* — files
-- *"Python Snippets"* — snippets
-- *"Interview Prep"* — snippets, notes, links
+
+- _"React Patterns"_ — mostly snippets + notes
+- _"Context Files"_ — files
+- _"Python Snippets"_ — snippets
+- _"Interview Prep"_ — snippets, notes, links
 
 ### C. Search
 
@@ -317,6 +318,7 @@ model Tag {
 ## 🛠️ Tech Stack
 
 ### Framework
+
 - **Next.js 16** + **React 19**
 - SSR pages with dynamic components
 - API routes for backend (items, file uploads, AI calls)
@@ -324,22 +326,27 @@ model Tag {
 - **TypeScript** for type safety
 
 ### Database & ORM
+
 - **Neon PostgreSQL** (cloud)
 - **Prisma 7** (latest — fetch the latest docs before scaffolding)
-- **Redis** for caching *(maybe — evaluate when needed)*
+- **Redis** for caching _(maybe — evaluate when needed)_
 
 ### File Storage
+
 - **Cloudflare R2** for file & image uploads
 
 ### Authentication
+
 - **NextAuth v5**
 - Email + password
 - GitHub OAuth
 
 ### AI
+
 - **OpenAI** — `gpt-5-nano` model
 
 ### UI
+
 - **Tailwind CSS v4**
 - **shadcn/ui** components
 
@@ -358,34 +365,46 @@ model Tag {
 
 ## 💰 Monetization — Freemium
 
-| | **Free** | **Pro — $8/mo or $72/yr** |
-|---|---|---|
-| Items | 50 total | Unlimited |
-| Collections | 3 | Unlimited |
-| System types | All *except* file/image | All |
-| File & image uploads | ❌ | ✅ |
-| Custom types | ❌ | ✅ *(later)* |
-| Basic search | ✅ | ✅ |
-| AI auto-tagging | ❌ | ✅ |
-| AI code explanation | ❌ | ✅ |
-| AI prompt optimizer | ❌ | ✅ |
-| Export (JSON / ZIP) | ❌ | ✅ |
-| Priority support | ❌ | ✅ |
+|                      | **Free**                | **Pro — $8/mo or $72/yr** |
+| -------------------- | ----------------------- | ------------------------- |
+| Items                | 50 total                | Unlimited                 |
+| Collections          | 3                       | Unlimited                 |
+| System types         | All _except_ file/image | All                       |
+| File & image uploads | ❌                      | ✅                        |
+| Custom types         | ❌                      | ✅ _(later)_              |
+| Basic search         | ✅                      | ✅                        |
+| AI auto-tagging      | ❌                      | ✅                        |
+| AI code explanation  | ❌                      | ✅                        |
+| AI prompt optimizer  | ❌                      | ✅                        |
+| Export (JSON / ZIP)  | ❌                      | ✅                        |
+| Priority support     | ❌                      | ✅                        |
 
 > 🧪 **During development:** wire up the Pro plumbing (Stripe fields, `isPro` flag, gating helpers) but treat every user as Pro so the full feature surface is testable.
 
 ---
 
-## 🎨 UI / UX
+## 🎨 UI / UX Guidelines
 
-### Design language
+### Design Principles
 
-- Modern, minimal, developer-focused
-- **Dark mode default**, light mode optional
-- Clean typography, generous whitespace
-- Subtle borders and soft shadows
-- Syntax highlighting for code blocks
-- **References:** Notion, Linear, Raycast
+- **Modern & minimal** - developer-focused
+- **Dark mode default** - light mode optional
+- **Clean Typography** - generous whitespace
+- **Subtle Accents** - borders and shadows sparingly
+- **Syntax highlighting** - for code blocks
+
+### Design References
+
+- Notion
+- Linear
+- Raycast
+
+### Screenshots
+
+Refer to the screenshots below as a base for the dashboard UI. It does not have to be exact. Use it as a reference:
+
+- @context/screenshots/dashboard-ui-main.png
+- @context/screenshots/dashboard-ui-drawer.png
 
 ### Layout
 
